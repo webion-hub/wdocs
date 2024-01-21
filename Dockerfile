@@ -1,4 +1,4 @@
-FROM node:latest AS base
+FROM node:20-alpine AS base
 
 FROM base AS deps
 WORKDIR /app

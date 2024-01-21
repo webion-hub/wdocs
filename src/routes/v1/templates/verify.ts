@@ -1,6 +1,4 @@
 import { Request, Response } from "express";
-import Docxtemplater from 'docxtemplater';
-import PizZip from "pizzip";
 import { TemplateLoader } from "../../../services/TemplateLoader";
 import { ErrorDictionary } from "../../common/ErrorDictionary";
 
