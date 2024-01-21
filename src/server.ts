@@ -19,12 +19,13 @@ app.use(express.json({
 
 
 app.use((req, res, next) => {
-  const ep = `${req.method} ${req.url}`;
+  const reqId = crypto.randomUUID();
+  const epId = `[${reqId}] ${req.method} ${req.url}`;
 
-  console.time(ep);
-  console.log(ep);
+  console.time(epId);
+  console.log(epId);
   next();
-  console.log(`${ep} - ${res.statusCode} - ${console.timeEnd(ep)}`);
+  console.log(`${epId} - ${res.statusCode} - ${console.timeEnd(epId)}`);
 });
 
 app.post('/v1/templates/verify', verify);
