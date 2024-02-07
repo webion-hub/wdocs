@@ -1,5 +1,6 @@
 import Docxtemplater from "docxtemplater";
 import PizZip from "pizzip";
+import expressionParser from "docxtemplater/expressions.js";
 
 export class TemplateLoader {
   public static loadBase64(base64Str: string): Docxtemplater<PizZip> {
@@ -10,6 +11,7 @@ export class TemplateLoader {
     const doc = new Docxtemplater(zip, {
       paragraphLoop: true,
       linebreaks: true,
+      parser: expressionParser,
     });
 
     return doc;
